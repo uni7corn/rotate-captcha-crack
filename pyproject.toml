@@ -1,59 +1,24 @@
 [project]
 name = "rotate-captcha-crack"
-version = "0.6.0a4"
+version = "0.6.0a5"
 authors = [{ name = "lumina37", email = "starry.qvq@gmail.com" }]
 urls = { Repository = "https://github.com/lumina37/rotate-captcha-crack" }
 dependencies = ["torch", "torchvision", "matplotlib", "tqdm"]
-requires-python = ">=3.11,<3.14"
+requires-python = ">=3.11,<3.15"
 readme = "README.md"
 
 [project.optional-dependencies]
 server = ["aiohttp"]
 
 [build-system]
-requires = ["uv_build>=0.9.25,<0.10.0"]
+requires = ["uv_build>=0.11.16,<0.12"]
 build-backend = "uv_build"
 
 [tool.uv.sources]
-torch = [{ index = "pytorch-cu126", marker = "platform_system != 'Darwin'" }]
-torchvision = [{ index = "pytorch-cu126", marker = "platform_system != 'Darwin'" }]
+torch = [{ index = "pytorch-cu130", marker = "platform_system != 'Darwin'" }]
+torchvision = [{ index = "pytorch-cu130", marker = "platform_system != 'Darwin'" }]
 
 [[tool.uv.index]]
-name = "pytorch-cu126"
-url = "https://download.pytorch.org/whl/cu126"
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
 explicit = true
-
-[tool.ruff]
-line-length = 120
-target-version = "py311"
-
-[tool.ruff.lint]
-select = [
-    "F",
-    "E",
-    "W",
-    "I",
-    "UP",
-    "YTT",
-    "ASYNC",
-    "B",
-    "A",
-    "C4",
-    "FA",
-    "ICN",
-    "LOG",
-    "PIE",
-    "PT",
-    "Q",
-    "RSE",
-    "SLOT",
-    "TC",
-    "PTH",
-    "NPY",
-    "PERF",
-    "FURB",
-]
-ignore = ["A005", "E402", "E501", "E266"]
-
-[tool.ruff.lint.per-file-ignores]
-"__init__.py" = ["F401"]

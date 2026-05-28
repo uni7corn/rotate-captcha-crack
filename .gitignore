@@ -1,23 +1,13 @@
-*
+/.*
 
-!.gitignore
-!LICENSE
-!README.md
-!README_zh-cn.md
+*.py[cd]
+*.lock
 
-!pyproject.toml
+*.jpg
+*.png
 
-!train_RCCNet.py
-!train_RotNet.py
-!train_RotNetR.py
-!test_RCCNet.py
-!test_RotNet.py
-!test_RotNetR.py
-!quant_RotNetR.py
-!test_captcha.py
-!server.py
+/figures
+/models
+/log
 
-!src
-!src/**
-
-__pycache__
+debug.py
